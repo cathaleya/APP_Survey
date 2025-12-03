@@ -1,14 +1,86 @@
 [
   {
     "id": "Q1.1",
-    "dimensi": "Affordability (Keterjangkauan)",
-    "skenario": "Anda berencana mengadakan ujian harian menggunakan platform kuis online yang interaktif. Sehari sebelum pelaksanaan, tiga orang tua siswa melapor tidak memiliki kuota internet untuk membuka aplikasi berat tersebut. Sekolah tidak menyediakan subsidi.",
-    "pertanyaan": "Apa keputusan strategis yang paling inklusif yang Anda ambil?",
+    "dimensi": "Affordability",
+    "skenario": "Anda mewajibkan siswa menonton video materi pengayaan di rumah. Namun, 5 orang tua siswa melapor bahwa mereka tidak sanggup membeli kuota data tambahan bulan ini.",
+    "pertanyaan": "Tindakan inklusif yang Anda ambil?",
     "opsi": {
-      "A": "Tetap melaksanakan kuis karena mayoritas siap, 3 siswa menyusul nanti.",
-      "B": "Membatalkan kuis online, ganti soal teks via WA agar hemat.",
-      "C": "Siswa berkuota pakai aplikasi, siswa terkendala diberi file 'mode ringan' atau diizinkan pakai WiFi sekolah bergilir.",
-      "D": "Meminta siswa tersebut menumpang tethering ke teman rumahnya."
+      "A": "Tetap mewajibkan karena pendidikan butuh modal.",
+      "B": "Strategi Diferensiasi: Siswa punya kuota nonton di rumah, siswa tak punya kuota nonton di perpustakaan sekolah (offline) saat istirahat.",
+      "C": "Membatalkan tugas video untuk semua siswa.",
+      "D": "Meminta siswa menumpang WiFi tetangga/balai desa."
+    },
+    "poin": {
+      "A": 1,
+      "B": 5,
+      "C": 2,
+      "D": 3
+    }
+  },
+  {
+    "id": "Q1.2",
+    "dimensi": "Affordability",
+    "skenario": "Sekolah mendapat bantuan tablet tapi jumlahnya terbatas (1 tablet untuk 3 siswa). Anda ingin menggunakan aplikasi matematika.",
+    "pertanyaan": "Strategi pengelolaan kelas Anda?",
+    "opsi": {
+      "A": "Aplikasi tidak jadi dipakai karena tablet kurang.",
+      "B": "Pilih aplikasi multi-user/offline, rancang pembelajaran stasiun (bergantian) agar semua dapat giliran.",
+      "C": "Minta siswa bawa HP sendiri untuk lengkapi kekurangan.",
+      "D": "Hanya siswa ranking 1-10 yang boleh pakai tablet."
+    },
+    "poin": {
+      "A": 1,
+      "B": 5,
+      "C": 3,
+      "D": 2
+    }
+  },
+  {
+    "id": "Q1.3",
+    "dimensi": "Affordability",
+    "skenario": "Anda menemukan modul digital (PDF) sangat bagus tapi berbayar mahal. Sekolah tidak ada anggaran.",
+    "pertanyaan": "Solusi etis dan ekonomis?",
+    "opsi": {
+      "A": "Beli pribadi, jual fotokopi ke siswa.",
+      "B": "Cari bajakan di internet.",
+      "C": "Cari OER (Open Educational Resources) gratis berlisensi Creative Commons, adaptasi sesuai kebutuhan.",
+      "D": "Mengeluh fasilitas minim."
+    },
+    "poin": {
+      "A": 1,
+      "B": 3,
+      "C": 5,
+      "D": 2
+    }
+  },
+  {
+    "id": "Q1.4",
+    "dimensi": "Affordability",
+    "skenario": "Anda menyiapkan PPT interaktif, tapi proyektor sekolah ternyata dipakai guru lain dan baru kosong 2 jam lagi.",
+    "pertanyaan": "Respon fleksibilitas kognitif Anda?",
+    "opsi": {
+      "A": "Ubah strategi jadi diskusi kelompok pakai laptop Anda sebagai 'kios informasi' bergilir.",
+      "B": "Batalkan pelajaran, catat buku paket.",
+      "C": "Marah ke guru pemakai proyektor.",
+      "D": "Tunggu proyektor kosong (jam kosong)."
+    },
+    "poin": {
+      "A": 5,
+      "B": 1,
+      "C": 2,
+      "D": 3
+    }
+  },
+  {
+    "id": "Q1.5",
+    "dimensi": "Affordability",
+    "skenario": "Grup WA dipakai untuk info PR. Sebagian orang tua gaptek/HP jadul (tak punya WA) sehingga anak ketinggalan info.",
+    "pertanyaan": "Strategi komunikasi hibrid?",
+    "opsi": {
+      "A": "Wajibkan ortu beli HP Android.",
+      "B": "Biarkan, tanggung jawab ortu.",
+      "C": "Info di WA tetap jalan, tapi buat juga 'Papan Info PR' fisik di gerbang atau tempel stiker di buku siswa.",
+      "D": "Minta ketua kelas telepon teman tiap sore."
     },
     "poin": {
       "A": 1,
@@ -18,69 +90,33 @@
     }
   },
   {
-    "id": "Q1.2",
-    "dimensi": "Affordability (Keterjangkauan)",
-    "skenario": "Kepala sekolah meminta rekomendasi aplikasi perpustakaan digital. Pilihan X: Berbayar, konten bagus, berat. Pilihan Y: Gratis/Open Source, konten sederhana bisa diedit, ringan/offline. Mayoritas siswa ekonomi menengah ke bawah.",
-    "pertanyaan": "Rekomendasi mana yang Anda berikan?",
-    "opsi": {
-      "A": "Pilih Y: Keberlanjutan akses seluruh siswa lebih penting daripada fitur canggih, dan guru bisa memperkaya konten.",
-      "B": "Pilih X: Kualitas konten nomor satu, berharap nanti ada dana BOS.",
-      "C": "Pilih X untuk uji coba sebulan, kalau tidak sanggup baru pindah ke Y.",
-      "D": "Serahkan keputusan ke Kepala Sekolah agar aman."
-    },
-    "poin": {
-      "A": 5,
-      "B": 1,
-      "C": 3,
-      "D": 2
-    }
-  },
-  {
-    "id": "Q1.3",
-    "dimensi": "Affordability (Keterjangkauan)",
-    "skenario": "Anda menemukan video YouTube yang sangat bagus untuk materi IPA, tapi durasinya 1 jam (sangat boros kuota). Anda ingin siswa mempelajarinya di rumah.",
-    "pertanyaan": "Tindakan mana yang paling peduli pada keterjangkauan?",
-    "opsi": {
-      "A": "Share link video dan mewajibkan siswa menonton sampai habis.",
-      "B": "Mendownload video tersebut, memotong (cut) bagian pentingnya saja menjadi 5 menit, lalu membagikan file kecilnya ke grup kelas.",
-      "C": "Merangkum isi video dalam bentuk teks panjang.",
-      "D": "Meminta siswa mencari WiFi gratis di balai desa."
-    },
-    "poin": {
-      "A": 1,
-      "B": 5,
-      "C": 3,
-      "D": 2
-    }
-  },
-  {
     "id": "Q2.1",
-    "dimensi": "Cultural Inclusion (Inklusi Budaya)",
-    "skenario": "Video pembelajaran animasi 'Musim Salju' digunakan untuk menjelaskan es mencair. Siswa Anda di pesisir tropis bingung membayangkan konteksnya.",
-    "pertanyaan": "Bagaimana Anda memodifikasi pembelajaran ini?",
+    "dimensi": "Cultural Inclusion",
+    "skenario": "Video PMM mencontohkan proyek 'Market Day' jualan Sandwich dan Burger. Siswa desa Anda asing dengan makanan itu.",
+    "pertanyaan": "Adaptasi kontekstual Anda?",
     "opsi": {
-      "A": "Menjelaskan apa adanya, minta siswa menghafal salju = air beku.",
-      "B": "Gunakan video sebagai pemantik saja, lalu ajak siswa praktek nyata membuat es lilin/es batu (konteks lokal).",
-      "C": "Cari video lain berbahasa Indonesia meski kualitas animasi jelek.",
-      "D": "Lewati materi perubahan wujud benda."
+      "A": "Paksa buat Sandwich agar kenal modern.",
+      "B": "Ambil konsep 'Market Day' (jual beli), tapi ganti produk jadi jajanan pasar lokal (getuk/tiwul).",
+      "C": "Batalkan proyek.",
+      "D": "Jelaskan teori Sandwich tanpa praktek."
     },
     "poin": {
       "A": 2,
       "B": 5,
-      "C": 3,
-      "D": 1
+      "C": 1,
+      "D": 3
     }
   },
   {
     "id": "Q2.2",
-    "dimensi": "Cultural Inclusion (Inklusi Budaya)",
-    "skenario": "Sebagian besar siswa kelas 1 SD Anda lebih fasih bahasa daerah daripada Bahasa Indonesia. Materi digital dari pusat semuanya Bahasa Indonesia baku.",
-    "pertanyaan": "Strategi bridging (jembatan) apa yang Anda lakukan?",
+    "dimensi": "Cultural Inclusion",
+    "skenario": "Game edukasi matematika di tablet berbahasa Inggris ('Next', 'Submit'). Siswa kelas rendah bingung.",
+    "pertanyaan": "Strategi scaffolding?",
     "opsi": {
-      "A": "Larang bahasa daerah agar cepat lancar Bahasa Indonesia.",
-      "B": "Metode Translanguaging: Jelaskan konsep pakai bahasa daerah dulu, baru kenalkan istilah Indonesianya.",
-      "C": "Minta orang tua ajari Bahasa Indonesia di rumah.",
-      "D": "Ulang video berkali-kali sampai paham."
+      "A": "Larang game itu.",
+      "B": "Buat poster 'Kamus Kecil' ikon game + arti Indonesia di dinding, pandu di awal.",
+      "C": "Terjemahkan lisan satu per satu (lelah).",
+      "D": "Suruh tebak-tebak sendiri."
     },
     "poin": {
       "A": 1,
@@ -91,32 +127,86 @@
   },
   {
     "id": "Q2.3",
-    "dimensi": "Cultural Inclusion (Inklusi Budaya)",
-    "skenario": "Ada aplikasi membaca yang bagus, tapi tokoh-tokoh ceritanya bernama asing (Jack, Alice) dan kegiatannya (pesta Halloween) asing bagi budaya siswa Anda.",
-    "pertanyaan": "Cara terbaik memanfaatkan aplikasi ini?",
+    "dimensi": "Cultural Inclusion",
+    "skenario": "Ingin ajar lagu daerah. Di YouTube banyak versi remix DJ/Koplo yang menghilangkan estetika asli.",
+    "pertanyaan": "Keputusan kurasi konten?",
     "opsi": {
-      "A": "Gunakan saja karena itu mengenalkan budaya global.",
-      "B": "Saat menceritakan ulang di kelas, Anda mengganti nama tokoh menjadi (Budi, Siti) dan konteks kegiatannya disesuaikan budaya lokal secara lisan.",
-      "C": "Tidak jadi pakai aplikasi tersebut.",
-      "D": "Menyuruh siswa membayangkan mereka sedang di luar negeri."
+      "A": "Putar remix agar semangat.",
+      "B": "Luangkan waktu cari video versi asli/tradisional berkualitas untuk tanamkan apresiasi benar.",
+      "C": "Suruh siswa cari sendiri.",
+      "D": "Tidak pakai video, nyanyi manual."
     },
     "poin": {
-      "A": 2,
+      "A": 1,
       "B": 5,
+      "C": 3,
+      "D": 2
+    }
+  },
+  {
+    "id": "Q2.4",
+    "dimensi": "Cultural Inclusion",
+    "skenario": "Siswa memotret guru diam-diam di kelas dijadikan stiker WA. Di budaya setempat ini sangat tidak sopan.",
+    "pertanyaan": "Respon edukatif?",
+    "opsi": {
+      "A": "Sita HP, panggil polisi.",
+      "B": "Bahas kasus di kelas (tanpa sebut nama) sebagai studi kasus Privasi & Adat, buat kesepakatan kelas.",
+      "C": "Biarkan agar terlihat gaul.",
+      "D": "Lapor KS minta skors."
+    },
+    "poin": {
+      "A": 1,
+      "B": 5,
+      "C": 3,
+      "D": 2
+    }
+  },
+  {
+    "id": "Q2.5",
+    "dimensi": "Cultural Inclusion",
+    "skenario": "Tugas kliping budaya biasanya cuma copy-paste Google Image. Anda ingin lebih bermakna.",
+    "pertanyaan": "Inovasi penugasan?",
+    "opsi": {
+      "A": "Terima copy-paste asal rapi.",
+      "B": "Minta siswa potret tradisi sekitar rumah pakai HP ortu, unggah ke Padlet dengan narasi sendiri.",
+      "C": "Gambar tangan saja.",
+      "D": "Suruh ke warnet cari gambar beda."
+    },
+    "poin": {
+      "A": 1,
+      "B": 5,
+      "C": 3,
+      "D": 2
+    }
+  },
+  {
+    "id": "Q3.1",
+    "dimensi": "Wellbeing & Safety",
+    "skenario": "Ortu sering tanya PR di WA jam 10 malam. Mengganggu istirahat.",
+    "pertanyaan": "Manajemen batas profesional?",
+    "opsi": {
+      "A": "Tulis aturan 'Jam Respon' (07.00-16.00) di deskripsi grup, mute notifikasi di luar jam itu.",
+      "B": "Balas terus agar teladan.",
+      "C": "Marah di grup.",
+      "D": "Keluar grup."
+    },
+    "poin": {
+      "A": 5,
+      "B": 2,
       "C": 1,
       "D": 3
     }
   },
   {
-    "id": "Q3.1",
-    "dimensi": "Wellbeing & Safety (Kesejahteraan)",
-    "skenario": "Beredar stiker wajah siswa yang diedit mengejek di grup WA kelas. Korban mogok sekolah. Pelaku adalah siswa populer.",
-    "pertanyaan": "Tindakan pedagogis digital Anda?",
+    "id": "Q3.2",
+    "dimensi": "Wellbeing & Safety",
+    "skenario": "Rekan guru tempel password akun belajar.id di monitor lab umum.",
+    "pertanyaan": "Tindakan keamanan data?",
     "opsi": {
-      "A": "Marahi pelaku di depan kelas dan keluarkan dari grup.",
-      "B": "Tutup grup WA kelas selamanya.",
-      "C": "Pendekatan restoratif: Panggil pelaku & korban terpisah, fasilitasi maaf, lalu ajarkan 'Etika Digital' ke seluruh kelas.",
-      "D": "Minta pelaku hapus stiker dan minta maaf di chat."
+      "A": "Masa bodoh.",
+      "B": "Ikut catat.",
+      "C": "Tegur halus personal, jelaskan bahaya data bocor, sarankan cara aman.",
+      "D": "Lapor operator."
     },
     "poin": {
       "A": 1,
@@ -126,69 +216,69 @@
     }
   },
   {
-    "id": "Q3.2",
-    "dimensi": "Wellbeing & Safety (Kesejahteraan)",
-    "skenario": "Orang tua sering Video Call ke nomor pribadi Anda malam hari untuk tanya tugas. Privasi terganggu.",
-    "pertanyaan": "Bagaimana menegakkan batas profesional?",
+    "id": "Q3.3",
+    "dimensi": "Wellbeing & Safety",
+    "skenario": "Stres (burnout) dikejar sertifikat PMM dan tugas mengajar padat.",
+    "pertanyaan": "Strategi coping?",
     "opsi": {
-      "A": "Buat kesepakatan tertulis 'Jam Komunikasi' (misal 07.00-15.00), konsisten tidak angkat di luar jam itu (kecuali darurat), balas besok paginya.",
-      "B": "Angkat dengan nada ketus agar mereka sadar.",
-      "C": "Blokir nomor yang sering nelpon malam.",
-      "D": "Tetap layani 24 jam sebagai pengabdian."
+      "A": "Bayar joki PMM.",
+      "B": "Abaikan kelas demi PMM.",
+      "C": "Jadwalkan waktu khusus PMM (misal Sabtu), fokus penuh mengajar di jam sekolah.",
+      "D": "Mengeluh di status WA."
     },
     "poin": {
-      "A": 5,
-      "B": 3,
-      "C": 1,
-      "D": 2
+      "A": 2,
+      "B": 1,
+      "C": 5,
+      "D": 3
     }
   },
   {
-    "id": "Q3.3",
-    "dimensi": "Wellbeing & Safety (Kesejahteraan)",
-    "skenario": "Siswa mengeluh pusing dan lelah mata karena setiap hari zoom meeting 4 jam berturut-turut tanpa jeda.",
-    "pertanyaan": "Evaluasi desain pembelajaran Anda?",
+    "id": "Q3.4",
+    "dimensi": "Wellbeing & Safety",
+    "skenario": "Siswa sering mengantuk di kelas karena main game online sampai subuh.",
+    "pertanyaan": "Intervensi guru?",
     "opsi": {
-      "A": "Kurangi durasi tatap muka (sinkron) jadi 1 jam saja untuk diskusi inti, sisanya aktivitas mandiri (asinkron) offline.",
-      "B": "Suruh siswa minum obat sakit kepala dan tetap ikut zoom.",
-      "C": "Memberi jam istirahat 5 menit setiap 2 jam.",
-      "D": "Mengganti zoom dengan tugas menulis 10 halaman."
+      "A": "Marahi tiap mengantuk.",
+      "B": "Undang ortu diskusi, ajarkan Parental Control (Family Link), buat kesepakatan dengan siswa.",
+      "C": "Biarkan tidur.",
+      "D": "Sita HP selamanya."
     },
     "poin": {
-      "A": 5,
-      "B": 1,
-      "C": 3,
-      "D": 2
+      "A": 1,
+      "B": 5,
+      "C": 2,
+      "D": 3
+    }
+  },
+  {
+    "id": "Q3.5",
+    "dimensi": "Wellbeing & Safety",
+    "skenario": "Beredar hoax penculikan anak di grup WA ortu, bikin panik.",
+    "pertanyaan": "Peran literasi digital guru?",
+    "opsi": {
+      "A": "Ikut sebar.",
+      "B": "Diam saja.",
+      "C": "Cari klarifikasi resmi (Cek Fakta), posting info benar dengan bahasa menenangkan.",
+      "D": "Hapus pesan tanpa penjelasan."
+    },
+    "poin": {
+      "A": 1,
+      "B": 2,
+      "C": 5,
+      "D": 3
     }
   },
   {
     "id": "Q4.1",
-    "dimensi": "Empowered Agency (Agensi Guru)",
-    "skenario": "Sekolah hanya punya 1 proyektor LCD dan tidak ada lab komputer. Anda ingin mengajar berbasis digital.",
-    "pertanyaan": "Sikap agensi mana yang Anda tunjukkan?",
+    "dimensi": "Empowered Agency",
+    "skenario": "Anda menemukan metode seru Quizizz Paper Mode. Rekan lain malas coba.",
+    "pertanyaan": "Cara mengajak (influence)?",
     "opsi": {
-      "A": "Kembali pakai papan tulis sampai alat dibeli.",
-      "B": "Ajukan proposal dan tunggu semester depan.",
-      "C": "Metode Station Rotation: Bagi kelompok, satu kelompok nonton di laptop Anda, yang lain aktivitas fisik, lalu tukar posisi.",
-      "D": "Minta siswa bawa HP sendiri (langgar aturan)."
-    },
-    "poin": {
-      "A": 1,
-      "B": 3,
-      "C": 5,
-      "D": 2
-    }
-  },
-  {
-    "id": "Q4.2",
-    "dimensi": "Empowered Agency (Agensi Guru)",
-    "skenario": "Guru senior skeptis dengan AI (ChatGPT) dianggap alat menyontek. Anda tahu manfaatnya untuk RPP.",
-    "pertanyaan": "Posisi Anda sebagai Teacher Leader?",
-    "opsi": {
-      "A": "Pakai diam-diam untuk kerjaan sendiri.",
-      "B": "Adakan sesi 'Berbagi Praktik Baik' 15 menit, demokan cara AI bantu administrasi (bukan gantikan guru) untuk ubah persepsi.",
-      "C": "Debat dengan senior.",
-      "D": "Lapor pengawas minta pelatihan wajib."
+      "A": "Pakai sendiri diam-diam.",
+      "B": "Ajak rekan lihat kelas Anda saat main (bukti antusiasme siswa), baru tawarkan bantuan.",
+      "C": "Sindhir guru gaptek.",
+      "D": "Paksa KS wajibkan."
     },
     "poin": {
       "A": 2,
@@ -198,21 +288,75 @@
     }
   },
   {
-    "id": "Q4.3",
-    "dimensi": "Empowered Agency (Agensi Guru)",
-    "skenario": "Anda menyadari materi TIK di kurikulum sudah usang (masih mengajarkan Ms Word 2007), padahal dunia kerja butuh kolaborasi cloud (GDocs/Canva).",
-    "pertanyaan": "Keputusan kurikulum apa yang Anda ambil?",
+    "id": "Q4.2",
+    "dimensi": "Empowered Agency",
+    "skenario": "Buku TIK ajar cara pakai disket (usang).",
+    "pertanyaan": "Keputusan kurikulum?",
     "opsi": {
-      "A": "Tetap ajar sesuai buku paket agar aman administrasi.",
-      "B": "Secara inisiatif menyisipkan materi cloud/Canva sebagai pengayaan ('hack curriculum') tanpa meninggalkan target dasar.",
-      "C": "Protes ke Kemdikbud lewat medsos.",
-      "D": "Menyuruh siswa les komputer di luar."
+      "A": "Ajar sesuai buku.",
+      "B": "Jelaskan sejarah disket sekilas, lompat ajar Google Drive/Flashdisk (relevan).",
+      "C": "Tidak ajar bab itu.",
+      "D": "Suruh cari sendiri."
     },
     "poin": {
-      "A": 2,
+      "A": 1,
       "B": 5,
-      "C": 1,
-      "D": 1
+      "C": 3,
+      "D": 2
+    }
+  },
+  {
+    "id": "Q4.3",
+    "dimensi": "Empowered Agency",
+    "skenario": "Dinas jarang adakan pelatihan TIK. Skill stagnan.",
+    "pertanyaan": "Agensi belajar?",
+    "opsi": {
+      "A": "Pasrah tunggu dinas.",
+      "B": "Cari webinar gratis YouTube/PMM, gabung komunitas, praktek 1 ilmu baru per minggu.",
+      "C": "Mengeluh.",
+      "D": "Minta ajar teman tapi tak dicoba."
+    },
+    "poin": {
+      "A": 1,
+      "B": 5,
+      "C": 3,
+      "D": 2
+    }
+  },
+  {
+    "id": "Q4.4",
+    "dimensi": "Empowered Agency",
+    "skenario": "WiFi sekolah lemot saat peak hour. KS acuh.",
+    "pertanyaan": "Advokasi data?",
+    "opsi": {
+      "A": "Marah-marah.",
+      "B": "Catat jam macet, usul jadwal penggunaan bergilir per jenjang, ajukan ke KS.",
+      "C": "Pakai kuota pribadi.",
+      "D": "Stop pakai internet."
+    },
+    "poin": {
+      "A": 1,
+      "B": 5,
+      "C": 3,
+      "D": 2
+    }
+  },
+  {
+    "id": "Q4.5",
+    "dimensi": "Empowered Agency",
+    "skenario": "Ingin buat video profil sekolah tapi tak bisa edit.",
+    "pertanyaan": "Solusi kolaboratif?",
+    "opsi": {
+      "A": "Batalkan.",
+      "B": "Jadi sutradara, rekrut siswa jago ngedit HP jadi tim teknis. Belajar dari siswa.",
+      "C": "Bayar jasa.",
+      "D": "Belajar setahun dulu."
+    },
+    "poin": {
+      "A": 1,
+      "B": 5,
+      "C": 2,
+      "D": 3
     }
   }
 ]
