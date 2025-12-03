@@ -26,7 +26,7 @@
       "A": "Aplikasi tidak jadi dipakai karena jumlah tablet kurang memadai untuk seluruh siswa.",
       "B": "Pilih aplikasi yang bisa dipakai bersama secara tanpa kuota, rancang pembelajaran sistem rotasi agar semua mendapatkan giliran.",
       "C": "Meminta siswa yang memiliki HP sendiri untuk membawanya agar menutupi kekurangan tablet.",
-      "D": "Hanya siswa dengan peringkat 1-10 yang diizinkan menggunakan tablet sebagai reward."
+      "D": "Hanya mengijinkan siswa dengan peringkat 1-10 yang diizinkan menggunakan tablet sebagai reward."
     },
     "poin": {
       "A": 1,
@@ -44,7 +44,7 @@
       "A": "Membeli secara pribadi, lalu menjual hasil fotokopi modul tersebut kepada siswa.",
       "B": "Mencari versi bajakan di internet agar tidak perlu mengeluarkan biaya sama sekali.",
       "C": "Mencari Sumber Belajar Terbuka yang gratis dan berlisensi resmi lalu mengadaptasinya sesuai kebutuhan.",
-      "D": "Hanya mengeluh tentang fasilitas yang minim tanpa mencari solusi alternatif lain."
+      "D": "Mengeluh tentang fasilitas yang minim tanpa mencari solusi alternatif lain."
     },
     "poin": {
       "A": 1,
@@ -98,7 +98,7 @@
       "A": "Memaksa siswa membuat Sandwich agar mereka mengenal budaya makanan modern/barat.",
       "B": "Ambil konsep jual beli tetapi ganti produk jadi jajanan pasar lokal seperti pisang goreng atau bakso.",
       "C": "Membatalkan proyek tersebut karena dianggap terlalu sulit dan tidak relevan.",
-      "D": "Hanya menjelaskan teori tentang Sandwich di kelas tanpa melakukan praktek langsung."
+      "D": "Menjelaskan teori tentang Sandwich di kelas tanpa melakukan praktek langsung."
     },
     "poin": {
       "A": 2,
@@ -114,7 +114,7 @@
     "pertanyaan": "Apa yang akan Anda lakukan untuk membantu siswa memahami aplikasi tersebut?",
     "opsi": {
       "A": "Melarang penggunaan permainan itu karena bahasanya sulit dipahami siswa.",
-      "B": "Buat poster Kamus Kecil ikon tombol dan arti Indonesia di dinding, pandu di awal.",
+      "B": "Membuat poster Kamus Kecil ikon tombol dan arti Indonesia di dinding, pandu di awal.",
       "C": "Menerjemahkan instruksi secara lisan satu per satu kepada setiap siswa.",
       "D": "Menyuruh siswa menebak-nebak sendiri arti tombolnya tanpa bantuan guru."
     },
@@ -132,7 +132,7 @@
     "pertanyaan": "Video seperti apa yang akan Anda pilih untuk diputar di kelas?",
     "opsi": {
       "A": "Memutar versi kompilasi agar suasana kelas menjadi lebih semangat dan meriah.",
-      "B": "Luangkan waktu cari video versi asli atau tradisional berkualitas untuk tanamkan apresiasi benar.",
+      "B": "Meluangkan waktu cari video versi asli atau tradisional berkualitas untuk tanamkan apresiasi benar.",
       "C": "Menyuruh siswa mencari sendiri video yang mereka sukai di HP masing-masing.",
       "D": "Tidak menggunakan video sama sekali, cukup bernyanyi serentak bersama-sama."
     },
@@ -168,7 +168,7 @@
     "pertanyaan": "Bentuk penugasan seperti apa yang akan Anda berikan?",
     "opsi": {
       "A": "Menerima tugas salin-tempel atau copy-paste asalkan tata letaknya rapi dan bersih.",
-      "B": "Minta siswa potret tradisi sekitar rumah pakai HP ortu, unggah ke galeri kelas dengan cerita sendiri.",
+      "B": "Meminta siswa potret tradisi sekitar rumah pakai HP ortu, unggah ke galeri kelas dengan cerita sendiri.",
       "C": "Mewajibkan siswa menggambar tangan saja agar tidak perlu menggunakan internet.",
       "D": "Menyuruh siswa pergi ke warnet untuk mencari gambar yang berbeda dari teman."
     },
@@ -185,8 +185,8 @@
     "skenario": "Orangtua sering bertanya PR di WA jam 10 malam. Mengganggu istirahat Anda.",
     "pertanyaan": "Bagaimana Anda merespon situasi ini tanpa mengurangi profesionalisme?",
     "opsi": {
-      "A": "Tulis aturan Jam Respon (07.00-16.00) di deskripsi grup, bisukan atau mute notifikasi di luar jam itu.",
-      "B": "Terus membalas pesan kapan saja agar dianggap sebagai guru teladan yang berdedikasi.",
+      "A": "Menulis aturan Jam Respon (07.00-16.00) di deskripsi grup, bisukan atau mute notifikasi di luar jam itu.",
+      "B": "Membalas pesan kapan saja agar dianggap sebagai guru teladan yang berdedikasi.",
       "C": "Marah-marah di grup karena merasa waktu istirahat Anda terganggu oleh orang tua.",
       "D": "Keluar dari grup WhatsApp kelas agar tidak perlu membaca keluhan orang tua."
     },
@@ -240,7 +240,7 @@
     "pertanyaan": "Pendekatan apa yang akan Anda lakukan kepada siswa dan orang tuanya?",
     "opsi": {
       "A": "Memarahi siswa tersebut setiap kali terlihat mengantuk di dalam kelas.",
-      "B": "Undang ortu diskusi, ajarkan Fitur Pengawasan Orang Tua di HP, buat kesepakatan dengan siswa.",
+      "B": "Mengundang ortu diskusi, ajarkan Fitur Pengawasan Orang Tua di HP, buat kesepakatan dengan siswa.",
       "C": "Membiarkan siswa tidur di kelas karena kasihan dia kurang istirahat.",
       "D": "Menyita HP siswa selamanya agar dia tidak bisa bermain game lagi."
     },
@@ -258,8 +258,8 @@
     "pertanyaan": "Tindakan apa yang akan Anda lakukan di grup tersebut?",
     "opsi": {
       "A": "Ikut menyebarkan informasi tersebut agar semua orang tua waspada.",
-      "B": "Diam saja dan tidak peduli, karena itu urusan orang tua murid.",
-      "C": "Cari klarifikasi resmi, posting info benar dengan bahasa menenangkan.",
+      "B": "Berdiam saja dan tidak peduli, karena itu urusan orang tua murid.",
+      "C": "Mencari klarifikasi resmi, posting info benar dengan bahasa menenangkan.",
       "D": "Langsung menghapus pesan tersebut tanpa memberikan penjelasan apapun."
     },
     "poin": {
@@ -294,9 +294,9 @@
     "pertanyaan": "Apa keputusan Anda terkait materi ajar tersebut?",
     "opsi": {
       "A": "Tetap mengajar sesuai buku paket agar administrasi aman dan tidak repot.",
-      "B": "Jelaskan sejarah disket sekilas, lompat mengajar penyimpanan online atau Flashdisk.",
+      "B": "Menjelaskan sejarah disket sekilas, lompat mengajar penyimpanan online atau Flashdisk.",
       "C": "Tidak mengajarkan bab itu sama sekali karena dianggap membuang waktu.",
-      "D": "Menyuruh siswa mencari informasi sendiri di internet tentang materi tersebut."
+      "D": "Memerintahkan siswa mencari informasi sendiri di internet tentang materi tersebut."
     },
     "poin": {
       "A": 1,
@@ -312,7 +312,7 @@
     "pertanyaan": "Apa inisiatif Anda untuk tetap meningkatkan kompetensi diri?",
     "opsi": {
       "A": "Pasrah menunggu undangan pelatihan dari dinas pendidikan datang sendiri.",
-      "B": "Cari webinar gratis YouTube/PMM, gabung komunitas, praktek 1 ilmu baru per minggu.",
+      "B": "Mencari webinar gratis YouTube/PMM, gabung komunitas, praktek 1 ilmu baru per minggu.",
       "C": "Hanya mengeluh kepada rekan sejawat tentang minimnya kesempatan pengembangan diri.",
       "D": "Meminta diajarkan teman tapi tidak pernah dicoba dipraktekkan sendiri."
     },
@@ -348,7 +348,7 @@
     "pertanyaan": "Solusi kreatif apa yang akan Anda tempuh untuk menyelesaikan video ini?",
     "opsi": {
       "A": "Membatalkan pembuatan video profil sekolah karena merasa tidak mampu.",
-      "B": "Jadi sutradara, rekrut siswa jago ngedit HP jadi tim teknis. Belajar dari siswa.",
+      "B": "Menjadi sutradara, rekrut siswa jago ngedit HP jadi tim teknis. Belajar dari siswa.",
       "C": "Membayar jasa profesional untuk membuatkan video agar hasilnya bagus.",
       "D": "Menunda pembuatan video sampai Anda belajar mengedit selama setahun."
     },
