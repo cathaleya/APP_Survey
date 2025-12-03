@@ -1,0 +1,82 @@
+[
+  {
+    "id": "Q1",
+    "dimensi": "Affordability (Keterjangkauan)",
+    "level_kognitif": "C5 - Mengevaluasi",
+    "skenario": "Anda ingin menggunakan aplikasi gamifikasi untuk meningkatkan motivasi siswa. Namun, setelah riset kecil, Anda menemukan bahwa aplikasi tersebut memakan kuota data yang sangat besar (sekitar 1GB per sesi). Mayoritas orang tua siswa Anda berasal dari kalangan ekonomi menengah ke bawah.",
+    "pertanyaan": "Apa keputusan pedagogis paling tepat yang Anda ambil?",
+    "opsi": {
+      "A": "Tetap mewajibkan aplikasi tersebut karena fitur pembelajarannya sangat bagus, dan meminta orang tua mencari WiFi gratis.",
+      "B": "Membatalkan penggunaan teknologi sama sekali dan kembali ke metode ceramah konvensional agar adil.",
+      "C": "Mencari aplikasi alternatif yang lebih ringan (low-bandwidth) atau menggunakan fitur tersebut hanya di sekolah (offline server) dan memberikan tugas rumah berbasis teks.",
+      "D": "Menggunakan aplikasi tersebut hanya untuk siswa yang mampu saja, sementara yang lain diberi tugas membaca buku."
+    },
+    "kunci_jawaban": "C",
+    "poin": {
+      "A": 1,
+      "B": 2,
+      "C": 5,
+      "D": 1
+    }
+  },
+  {
+    "id": "Q2",
+    "dimensi": "Cultural Inclusion (Inklusi Budaya)",
+    "level_kognitif": "C6 - Mengkreasi",
+    "skenario": "Sekolah mewajibkan penggunaan platform literasi digital pusat. Konten di dalamnya menggunakan nama tokoh, lokasi, dan tradisi budaya asing yang asing bagi siswa Anda di daerah pedesaan. Siswa terlihat kesulitan menghubungkan materi dengan kehidupan sehari-hari mereka.",
+    "pertanyaan": "Langkah adaptasi konten apa yang paling efektif Anda lakukan?",
+    "opsi": {
+      "A": "Menggunakan materi tersebut apa adanya agar siswa terbiasa dengan budaya global/asing.",
+      "B": "Membuat materi pendamping (bridge content) yang memetakan konsep di platform tersebut ke dalam cerita rakyat atau contoh lokal yang dikenal siswa.",
+      "C": "Mengajukan protes ke kepala sekolah dan menolak mengajar sampai materi diganti oleh pusat.",
+      "D": "Menerjemahkan bahasa asingnya saja ke Bahasa Indonesia, tanpa mengubah konteks budayanya."
+    },
+    "kunci_jawaban": "B",
+    "poin": {
+      "A": 2,
+      "B": 5,
+      "C": 1,
+      "D": 3
+    }
+  },
+  {
+    "id": "Q3",
+    "dimensi": "Wellbeing & Safety (Kesejahteraan)",
+    "level_kognitif": "C5 - Mengevaluasi",
+    "skenario": "Grup WhatsApp kelas Anda menjadi sangat aktif 24 jam. Orang tua dan siswa sering bertanya soal tugas pada pukul 10 malam. Anda merasa lelah (burnout) dan cemas setiap kali notifikasi berbunyi, namun takut dianggap guru yang tidak dedikatif jika tidak membalas.",
+    "pertanyaan": "Bagaimana Anda mengelola situasi ini untuk menjaga kesejahteraan mental sekaligus profesionalisme?",
+    "opsi": {
+      "A": "Mematikan HP total setelah jam kerja dan tidak peduli jika ada keadaan darurat.",
+      "B": "Terus membalas setiap pesan kapanpun masuk demi pelayanan prima kepada orang tua murid.",
+      "C": "Menetapkan dan menyosialisasikan 'Jam Hening Digital' (misal: respon hanya 07.00-16.00), kecuali darurat, dan menggunakan fitur auto-reply di luar jam tersebut.",
+      "D": "Menyerahkan pengelolaan grup sepenuhnya kepada ketua paguyuban orang tua agar Anda tidak perlu membaca chat."
+    },
+    "kunci_jawaban": "C",
+    "poin": {
+      "A": 2,
+      "B": 1,
+      "C": 5,
+      "D": 2
+    }
+  },
+  {
+    "id": "Q4",
+    "dimensi": "Empowered Agency (Agensi Guru)",
+    "level_kognitif": "C6 - Merancang (Self-Regulated)",
+    "skenario": "Dinas Pendidikan meluncurkan aplikasi rapor digital baru yang cukup rumit. Pelatihan resmi belum dijadwalkan, namun tenggat waktu pengisian rapor tinggal 2 minggu lagi. Banyak rekan guru mengeluh dan pasrah menunggu instruksi.",
+    "pertanyaan": "Tindakan agensi apa yang menunjukkan kemandirian belajar tinggi?",
+    "opsi": {
+      "A": "Menunggu undangan pelatihan resmi turun, jika terlambat itu bukan salah guru.",
+      "B": "Mencoba-coba aplikasi sendiri, mencari tutorial di YouTube/Komunitas Guru, dan mengajak rekan sejawat untuk belajar bersama (peer-learning).",
+      "C": "Membayar jasa operator sekolah untuk mengisikan rapor agar Anda bisa fokus mengajar saja.",
+      "D": "Mengisi rapor secara manual dulu, nanti dipindahkan ke aplikasi jika sudah ada pelatihan."
+    },
+    "kunci_jawaban": "B",
+    "poin": {
+      "A": 1,
+      "B": 5,
+      "C": 1,
+      "D": 2
+    }
+  }
+]
