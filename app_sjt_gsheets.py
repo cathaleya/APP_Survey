@@ -81,15 +81,23 @@ def main():
             st.markdown(f"**Kasus: {q['dimensi']}**")
             st.info(q['skenario'])
             opsi_list = [f"A. {q['opsi']['A']}", f"B. {q['opsi']['B']}", f"C. {q['opsi']['C']}", f"D. {q['opsi']['D']}"]
-            choice = st.radio(q['pertanyaan'], opsi_list, key=q['id'])
-            answers[q['id']] = choice[0] # Ambil huruf A/B/C/D
+            choice = st.radio(q['pertanyaan'], opsi_list, key=q['id'], index=None)
+            if choice:
+                answers[q['id']] = choice[0] # Ambil huruf A/B/C/D
+            else:
+                answers[q['id']] = None
             st.markdown("---")
 
         submitted = st.form_submit_button("Kirim Jawaban")
 
         if submitted:
+            # Cek apakah semua soal sudah dijawab
+            unanswered = [q['id'] for q in questions if answers[q['id']] is None]
+
             if not nama or not sekolah:
-                st.error("Mohon lengkapi Data Responden.")
+                st.error("Mohon lengkapi Data Responden (Nama dan Asal Sekolah).")
+            elif unanswered:
+                st.error(f"Mohon jawab semua pertanyaan. Belum dijawab: {', '.join(unanswered)}")
             else:
                 # 1. Hitung Skor
                 total_score = 0
