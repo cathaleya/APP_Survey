@@ -19,73 +19,60 @@ st.set_page_config(page_title=PAGE_TITLE, layout="centered")
 def connect_to_gsheets():
     """Mengkoneksikan ke Google Sheets menggunakan st.secrets"""
     try:
-        # Mengambil kredensial dari st.secrets (toml)
         secrets = st.secrets["gcp_service_account"]
         creds = Credentials.from_service_account_info(secrets, scopes=SCOPE)
         client = gspread.authorize(creds)
-        
-        # Membuka Spreadsheet
-        # Pastikan nama spreadsheet di Google Sheets sesuai dengan yang ada di secrets atau hardcoded
         sheet_url = st.secrets["spreadsheet"]["url"]
         sheet = client.open_by_url(sheet_url).sheet1
         return sheet
     except Exception as e:
-        st.error(f"Gagal terkoneksi ke Google Sheets: {e}")
-        return None
+        return None # Silent error for now, handled in save/main
 
 def save_to_gsheets(data_dict):
     """Menyimpan satu baris data ke Google Sheets"""
     sheet = connect_to_gsheets()
     if sheet:
         try:
-            # Konversi dictionary ke list values sesuai urutan header
-            # Kita ambil valuesnya saja, urutan harus konsisten
             values = list(data_dict.values())
             sheet.append_row(values)
             return True
         except Exception as e:
             st.error(f"Gagal menyimpan data: {e}")
             return False
-    return False
+    else:
+        st.error("Gagal terkoneksi ke Database. Pastikan Secrets sudah diatur.")
+        return False
 
 # --- FUNGSI UTAMA ---
 def load_questions():
+    """Memuat pertanyaan dari file JSON dengan penanganan encoding yang aman"""
     try:
+        # Menggunakan utf-8-sig untuk menghandle BOM dari Windows
         with open(DATA_FILE, 'r', encoding='utf-8-sig') as f:
-            content = f.read()
-            
-        try:
-            return json.loads(content)
-        except json.JSONDecodeError as e:
-            st.error(f"Gagal memparsing JSON: {e}")
-            st.text(f"File Size: {len(content)} characters")
-            st.text("Preview content (first 500 chars):")
-            st.code(content[:500])
-            return []
-            
+            return json.load(f)
     except FileNotFoundError:
-        st.error(f"File soal '{DATA_FILE}' tidak ditemukan.")
+        st.error(f"File '{DATA_FILE}' tidak ditemukan!")
         return []
-    except Exception as e:
-        st.error(f"Terjadi kesalahan lain: {e}")
+    except json.JSONDecodeError as e:
+        st.error(f"Error pada format file soal (JSON): {e}")
         return []
 
 def main():
     st.title(PAGE_TITLE)
     st.markdown("### Survei Kompetensi Digital & Literasi AI Calon Guru")
     
-    # Cek apakah secrets sudah disetting
+    # Cek Validasi Secrets
     if "gcp_service_account" not in st.secrets:
-        st.warning("⚠️ Konfigurasi Google Sheets belum ditemukan. Aplikasi berjalan dalam Mode Demo (Data tidak tersimpan ke Cloud).")
-        st.info("Silakan ikuti panduan di 'PANDUAN_DEPLOYMENT.md' untuk menghubungkan ke database.")
-
+        st.warning("⚠️ Aplikasi belum terhubung ke Database.")
+    
     with st.expander("📝 Data Responden", expanded=True):
         nama = st.text_input("Nama Lengkap")
         sekolah = st.text_input("Asal Universitas")
         pengalaman = st.selectbox("Semester/Tingkat ", ["< 5 Semester", "3-6", "> 6 Semester"])
 
     questions = load_questions()
-    if not questions: return
+    if not questions:
+        st.stop()
 
     with st.form("sjt_form"):
         answers = {}
@@ -104,7 +91,6 @@ def main():
         submitted = st.form_submit_button("Kirim Jawaban")
 
         if submitted:
-            # Cek apakah semua soal sudah dijawab
             unanswered = [q['id'] for q in questions if answers[q['id']] is None]
 
             if not nama or not sekolah:
@@ -122,7 +108,7 @@ def main():
                     details[f"{q['id']}_Jwb"] = sel
                     details[f"{q['id']}_Poin"] = poin
 
-                # 2. Siapkan Data
+                # 2. Siapkan Payload
                 data_payload = {
                     "Timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                     "Nama": nama,
@@ -130,21 +116,18 @@ def main():
                     "Pengalaman": pengalaman,
                     "Total_Skor": total_score,
                 }
-                data_payload.update(details) # Gabungkan dengan detail jawaban
+                data_payload.update(details)
 
                 # 3. Simpan
-                success = False
                 if "gcp_service_account" in st.secrets:
-                    with st.spinner("Menyimpan ke Database Disertasi..."):
-                        success = save_to_gsheets(data_payload)
+                    with st.spinner("Menyimpan jawaban..."):
+                        if save_to_gsheets(data_payload):
+                            st.success("✅ Terima kasih! Jawaban Anda telah tersimpan.")
+                            st.metric("Skor Kompetensi Anda", f"{total_score}")
+                            st.balloons()
                 else:
-                    st.warning("Mode Offline: Data hanya ditampilkan di layar.")
-                    success = True # Bypass untuk demo
-
-                if success:
-                    st.success("✅ Data berhasil disimpan!")
-                    st.metric("Skor Kompetensi", f"{total_score}")
-                    st.balloons()
+                    st.info("Mode Demo: Data tidak disimpan (Secrets belum diatur).")
+                    st.metric("Skor Anda", f"{total_score}")
 
 if __name__ == "__main__":
     main()
