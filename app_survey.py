@@ -52,9 +52,22 @@ def save_to_gsheets(data_dict):
 def load_questions():
     try:
         with open(DATA_FILE, 'r', encoding='utf-8-sig') as f:
-            return json.load(f)
+            content = f.read()
+            
+        try:
+            return json.loads(content)
+        except json.JSONDecodeError as e:
+            st.error(f"Gagal memparsing JSON: {e}")
+            st.text(f"File Size: {len(content)} characters")
+            st.text("Preview content (first 500 chars):")
+            st.code(content[:500])
+            return []
+            
     except FileNotFoundError:
-        st.error("File soal tidak ditemukan.")
+        st.error(f"File soal '{DATA_FILE}' tidak ditemukan.")
+        return []
+    except Exception as e:
+        st.error(f"Terjadi kesalahan lain: {e}")
         return []
 
 def main():
