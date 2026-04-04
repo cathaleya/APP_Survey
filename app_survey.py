@@ -1,13 +1,12 @@
 import streamlit as st
 import json
 import pandas as pd
-from streamlit_gsheets import GSheetsConnection
+import requests
+import os
 from datetime import datetime
 
 # Set Page Config
 st.set_page_config(page_title="SJT Adaptive Thinking English - PGSD", layout="centered")
-
-import os
 
 # Get absolute path of the current directory
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -29,39 +28,34 @@ if "answers" not in st.session_state:
 if "user_data" not in st.session_state:
     st.session_state.user_data = {}
 
-# Custom Styles
-st.markdown("""
-<style>
-    .stProgress > div > div > div > div {
-        background-color: #4CAF50;
-    }
-</style>
-""", unsafe_allow_html=True)
-
-# Function to Save to GSheets
-def save_to_gsheets(data):
+# Helper Function to Save via Apps Script
+def save_via_apps_script(data):
     try:
-        conn = st.connection("gsheets", type=GSheetsConnection)
-        # Read existing data
-        existing_data = conn.read(ttl=0)
-        
-        # Create a new dataframe for the new entry
-        new_row = pd.DataFrame([data])
-        
-        # Append to existing
-        updated_df = pd.concat([existing_data, new_row], ignore_index=True)
-        
-        # Write back (Note: requires 'Edit' permission and proper setup in Streamlit Secrets)
-        conn.update(data=updated_df)
-        return True
+        # Get URL from secrets
+        if "connections" in st.secrets and "gsheets" in st.secrets["connections"]:
+            url = st.secrets["connections"]["gsheets"]["spreadsheet"]
+            # Detect if it's an Apps Script URL
+            if "script.google.com" in url:
+                response = requests.post(url, json=data)
+                if response.status_code == 200:
+                    return True
+                else:
+                    st.error(f"Error dari Apps Script: {response.text}")
+                    return False
+            else:
+                st.error("URL di secrets bukan merupakan Google Apps Script URL.")
+                return False
+        else:
+            st.error("Konfigurasi URL Spreadsheet tidak ditemukan di Secrets.")
+            return False
     except Exception as e:
-        st.error(f"Gagal mengirim data ke Google Sheets: {e}")
+        st.error(f"Gagal koneksi ke server: {e}")
         return False
 
 # --- PAGE: BIODATA ---
 if st.session_state.page == "biodata":
     st.title("📋 Biodata Peserta")
-    st.info("Silakan lengkapi data diri Anda sebelum memulai kuisioner Situational Judgement Test (SJT).")
+    st.info("Silakan lengkapi data diri Anda sebelum memulai kuisioner SJT.")
     
     with st.form("form_biodata"):
         nama = st.text_input("Nama Lengkap")
@@ -99,7 +93,6 @@ elif isinstance(st.session_state.page, int):
     st.markdown("---")
     st.subheader("Pilihan Tindakan:")
     
-    # Selection
     current_ans = st.session_state.answers.get(str(q["id"]), None)
     choice = st.radio(
         "Pilih tindakan yang menurut Anda paling tepat:",
@@ -108,87 +101,63 @@ elif isinstance(st.session_state.page, int):
     )
     
     col1, col2 = st.columns([1,1])
-    
     with col1:
         if st.session_state.page > 1:
             if st.button("⬅️ Kembali"):
                 st.session_state.page -= 1
                 st.rerun()
-                
     with col2:
-        if st.button("Selesai & Lanjut ➡️" if st.session_state.page < len(questions) else "Lihat Ringkasan 🏁"):
+        if st.button("Lanjut ➡️" if st.session_state.page < len(questions) else "Ringkasan 🏁"):
             if choice:
-                # Find score for selected choice
                 selected_opt = next(opt for opt in q["options"] if opt["text"] == choice)
                 st.session_state.answers[str(q["id"])] = {
                     "text": choice,
                     "score": selected_opt["score"]
                 }
-                
                 if st.session_state.page < len(questions):
                     st.session_state.page += 1
                 else:
                     st.session_state.page = "summary"
                 st.rerun()
             else:
-                st.warning("Mohon pilih salah satu jawaban.")
+                st.warning("Pilih salah satu jawaban.")
 
-# --- PAGE: SUMMARY & SUBMIT ---
+# --- PAGE: SUMMARY ---
 elif st.session_state.page == "summary":
     st.title("✅ Ringkasan Jawaban")
     st.write(f"Terima kasih, **{st.session_state.user_data['Nama']}**!")
-    st.write("Silakan periksa kembali ringkasan jawaban Anda sebelum dikirim.")
     
-    # Prepare data for summary table
-    summary_data = []
     total_score = 0
     final_responses = {}
-    
-    # Merge basic data
     for k, v in st.session_state.user_data.items():
         final_responses[k] = v
         
+    summary_list = []
     for q in questions:
         ans = st.session_state.answers.get(str(q["id"]))
-        summary_data.append({
-            "No": q["id"],
-            "Jawaban": ans["text"][:50] + "..." if ans else "Belum diisi",
-            "Skor": ans["score"] if ans else 0
-        })
-        if ans:
-            total_score += ans["score"]
-            final_responses[f"Q{q['id']}_Score"] = ans["score"]
-            final_responses[f"Q{q['id']}_Text"] = ans["text"]
+        total_score += ans["score"] if ans else 0
+        final_responses[f"Q{q['id']}"] = ans["text"] if ans else ""
+        final_responses[f"Score{q['id']}"] = ans["score"] if ans else 0
+        summary_list.append({"No": q["id"], "Skor": ans["score"] if ans else 0})
 
     final_responses["Total_Score"] = total_score
+    st.metric("Total Skor", f"{total_score} / 80")
     
-    st.table(pd.DataFrame(summary_data))
-    st.metric("Total Skor Adaptive Thinking", f"{total_score} / 80")
-    
-    if st.button("🚀 Kirim Data Ke Peneliti"):
-        with st.spinner("Mengirim data..."):
-            success = save_to_gsheets(final_responses)
-            if success:
-                st.success("Data berhasil terkirim ke Google Sheets Peneliti!")
+    if st.button("🚀 Kirim Hasil Sekarang"):
+        with st.spinner("Sedang mengirim..."):
+            if save_via_apps_script(final_responses):
+                st.success("Berhasil! Data Anda sudah masuk ke Google Sheets Peneliti.")
                 st.balloons()
                 st.session_state.page = "finish"
-                # st.rerun()
             else:
-                st.error("Gagal mengirim ke Google Sheets secara otomatis.")
-                st.info("Silakan unduh CSV hasil di bawah dan kirimkan manual ke Dosen/Peneliti.")
-                csv = pd.DataFrame([final_responses]).to_csv(index=False).encode('utf-8')
-                st.download_button(
-                    label="Download Hasil (CSV)",
-                    data=csv,
-                    file_name=f"Hasil_SJT_{st.session_state.user_data['NIM']}.csv",
-                    mime='text/csv',
-                )
+                st.error("Pengiriman otomatis gagal.")
+                st.info("Silakan copy data berikut dan kirim ke Peneliti:")
+                st.code(json.dumps(final_responses, indent=2))
 
 # --- PAGE: FINISH ---
 elif st.session_state.page == "finish":
     st.title("🏁 Selesai")
-    st.success("Terima kasih telah berpartisipasi dalam penelitian ini.")
-    st.write("Jawaban Anda telah tersimpan. Anda dapat menutup tab ini sekarang.")
-    if st.button("Mulai Baru (Reset)"):
+    st.success("Jawaban Anda telah tersimpan.")
+    if st.button("Mulai Baru"):
         st.session_state.clear()
         st.rerun()
