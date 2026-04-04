@@ -1,133 +1,184 @@
 import streamlit as st
 import json
 import pandas as pd
+from streamlit_gsheets import GSheetsConnection
 from datetime import datetime
-import gspread
-from google.oauth2.service_account import Credentials
 
-# --- KONFIGURASI ---
-PAGE_TITLE = "🎓 Survei  AI TPACK"
-DATA_FILE = "sjt_questions.json"
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive"
-]
+# Set Page Config
+st.set_page_config(page_title="SJT Adaptive Thinking English - PGSD", layout="centered")
 
-st.set_page_config(page_title=PAGE_TITLE, layout="centered")
+# Load Questions
+with open("questions.json", "r", encoding="utf-8") as f:
+    questions = json.load(f)
 
-# --- FUNGSI GOOGLE SHEETS ---
-def connect_to_gsheets():
-    """Mengkoneksikan ke Google Sheets menggunakan st.secrets"""
+# Initialize Session State
+if "page" not in st.session_state:
+    st.session_state.page = "biodata"
+if "answers" not in st.session_state:
+    st.session_state.answers = {}
+if "user_data" not in st.session_state:
+    st.session_state.user_data = {}
+
+# Custom Styles
+st.markdown("""
+<style>
+    .stProgress > div > div > div > div {
+        background-color: #4CAF50;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# Function to Save to GSheets
+def save_to_gsheets(data):
     try:
-        secrets = st.secrets["gcp_service_account"]
-        creds = Credentials.from_service_account_info(secrets, scopes=SCOPE)
-        client = gspread.authorize(creds)
-        sheet_url = st.secrets["spreadsheet"]["url"]
-        sheet = client.open_by_url(sheet_url).sheet1
-        return sheet
+        conn = st.connection("gsheets", type=GSheetsConnection)
+        # Read existing data
+        existing_data = conn.read(ttl=0)
+        
+        # Create a new dataframe for the new entry
+        new_row = pd.DataFrame([data])
+        
+        # Append to existing
+        updated_df = pd.concat([existing_data, new_row], ignore_index=True)
+        
+        # Write back (Note: requires 'Edit' permission and proper setup in Streamlit Secrets)
+        conn.update(data=updated_df)
+        return True
     except Exception as e:
-        return None # Silent error for now, handled in save/main
-
-def save_to_gsheets(data_dict):
-    """Menyimpan satu baris data ke Google Sheets"""
-    sheet = connect_to_gsheets()
-    if sheet:
-        try:
-            values = list(data_dict.values())
-            sheet.append_row(values)
-            return True
-        except Exception as e:
-            st.error(f"Gagal menyimpan data: {e}")
-            return False
-    else:
-        st.error("Gagal terkoneksi ke Database. Pastikan Secrets sudah diatur.")
+        st.error(f"Gagal mengirim data ke Google Sheets: {e}")
         return False
 
-# --- FUNGSI UTAMA ---
-def load_questions():
-    """Memuat pertanyaan dari file JSON dengan penanganan encoding yang aman"""
-    try:
-        # Menggunakan utf-8-sig untuk menghandle BOM dari Windows
-        with open(DATA_FILE, 'r', encoding='utf-8-sig') as f:
-            return json.load(f)
-    except FileNotFoundError:
-        st.error(f"File '{DATA_FILE}' tidak ditemukan!")
-        return []
-    except json.JSONDecodeError as e:
-        st.error(f"Error pada format file soal (JSON): {e}")
-        return []
-
-def main():
-    st.title(PAGE_TITLE)
-    st.markdown("### Survei Kompetensi Digital & Literasi AI Guru")
+# --- PAGE: BIODATA ---
+if st.session_state.page == "biodata":
+    st.title("📋 Biodata Peserta")
+    st.info("Silakan lengkapi data diri Anda sebelum memulai kuisioner Situational Judgement Test (SJT).")
     
-    # Cek Validasi Secrets
-    if "gcp_service_account" not in st.secrets:
-        st.warning("⚠️ Aplikasi belum terhubung ke Database.")
-    
-    with st.expander("📝 Data Responden", expanded=True):
+    with st.form("form_biodata"):
         nama = st.text_input("Nama Lengkap")
-        sekolah = st.text_input("Asal Universitas")
-
-    questions = load_questions()
-    if not questions:
-        st.stop()
-
-    with st.form("sjt_form"):
-        answers = {}
-        st.markdown("---")
-        for q in questions:
-            st.markdown(f"**Kasus: {q['dimensi']}**")
-            st.info(q['skenario'])
-            opsi_list = [f"A. {q['opsi']['A']}", f"B. {q['opsi']['B']}", f"C. {q['opsi']['C']}", f"D. {q['opsi']['D']}"]
-            choice = st.radio(q['pertanyaan'], opsi_list, key=q['id'], index=None)
-            if choice:
-                answers[q['id']] = choice[0] # Ambil huruf A/B/C/D
-            else:
-                answers[q['id']] = None
-            st.markdown("---")
-
-        submitted = st.form_submit_button("Kirim Jawaban")
-
-        if submitted:
-            unanswered = [q['id'] for q in questions if answers[q['id']] is None]
-
-            if not nama or not sekolah:
-                st.error("Mohon lengkapi Data Responden (Nama dan Asal Sekolah).")
-            elif unanswered:
-                st.error(f"Mohon jawab semua pertanyaan. Belum dijawab: {', '.join(unanswered)}")
-            else:
-                # 1. Hitung Skor
-                total_score = 0
-                details = {}
-                for q in questions:
-                    sel = answers[q['id']]
-                    poin = q['poin'][sel]
-                    total_score += poin
-                    details[f"{q['id']}_Jwb"] = sel
-                    details[f"{q['id']}_Poin"] = poin
-
-                # 2. Siapkan Payload
-                data_payload = {
-                    "Timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        nim = st.text_input("NIM / ID Mahasiswa")
+        univ = st.text_input("Universitas")
+        semester = st.selectbox("Semester", ["1", "2", "3", "4", "5", "6", "7", "8", ">8"])
+        
+        submit_bio = st.form_submit_button("Mulai Kuisioner")
+        
+        if submit_bio:
+            if nama and nim and univ:
+                st.session_state.user_data = {
                     "Nama": nama,
-                    "Sekolah": sekolah,
-                    "Pengalaman": pengalaman,
-                    "Total_Skor": total_score,
+                    "NIM": nim,
+                    "Universitas": univ,
+                    "Semester": semester,
+                    "Timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 }
-                data_payload.update(details)
+                st.session_state.page = 1
+                st.rerun()
+            else:
+                st.warning("Mohon lengkapi semua field biodata.")
 
-                # 3. Simpan
-                if "gcp_service_account" in st.secrets:
-                    with st.spinner("Menyimpan jawaban..."):
-                        if save_to_gsheets(data_payload):
-                            st.success("✅ Terima kasih! Jawaban Anda telah tersimpan.")
-                            st.metric("Skor Kompetensi Anda", f"{total_score}")
-                            st.balloons()
+# --- PAGE: QUESTIONNAIRE ---
+elif isinstance(st.session_state.page, int):
+    q_idx = st.session_state.page - 1
+    q = questions[q_idx]
+    
+    st.title(f"Situasi {st.session_state.page} dari {len(questions)}")
+    st.progress(st.session_state.page / len(questions))
+    
+    st.subheader("Skenario:")
+    st.write(q["scenario"])
+    
+    st.markdown("---")
+    st.subheader("Pilihan Tindakan:")
+    
+    # Selection
+    current_ans = st.session_state.answers.get(str(q["id"]), None)
+    choice = st.radio(
+        "Pilih tindakan yang menurut Anda paling tepat:",
+        options=[opt["text"] for opt in q["options"]],
+        index=None if current_ans is None else [opt["text"] for opt in q["options"]].index(current_ans["text"])
+    )
+    
+    col1, col2 = st.columns([1,1])
+    
+    with col1:
+        if st.session_state.page > 1:
+            if st.button("⬅️ Kembali"):
+                st.session_state.page -= 1
+                st.rerun()
+                
+    with col2:
+        if st.button("Selesai & Lanjut ➡️" if st.session_state.page < len(questions) else "Lihat Ringkasan 🏁"):
+            if choice:
+                # Find score for selected choice
+                selected_opt = next(opt for opt in q["options"] if opt["text"] == choice)
+                st.session_state.answers[str(q["id"])] = {
+                    "text": choice,
+                    "score": selected_opt["score"]
+                }
+                
+                if st.session_state.page < len(questions):
+                    st.session_state.page += 1
                 else:
-                    st.info("Mode Demo: Data tidak disimpan (Secrets belum diatur).")
-                    st.metric("Skor Anda", f"{total_score}")
+                    st.session_state.page = "summary"
+                st.rerun()
+            else:
+                st.warning("Mohon pilih salah satu jawaban.")
 
-if __name__ == "__main__":
-    main()
+# --- PAGE: SUMMARY & SUBMIT ---
+elif st.session_state.page == "summary":
+    st.title("✅ Ringkasan Jawaban")
+    st.write(f"Terima kasih, **{st.session_state.user_data['Nama']}**!")
+    st.write("Silakan periksa kembali ringkasan jawaban Anda sebelum dikirim.")
+    
+    # Prepare data for summary table
+    summary_data = []
+    total_score = 0
+    final_responses = {}
+    
+    # Merge basic data
+    for k, v in st.session_state.user_data.items():
+        final_responses[k] = v
+        
+    for q in questions:
+        ans = st.session_state.answers.get(str(q["id"]))
+        summary_data.append({
+            "No": q["id"],
+            "Jawaban": ans["text"][:50] + "..." if ans else "Belum diisi",
+            "Skor": ans["score"] if ans else 0
+        })
+        if ans:
+            total_score += ans["score"]
+            final_responses[f"Q{q['id']}_Score"] = ans["score"]
+            final_responses[f"Q{q['id']}_Text"] = ans["text"]
 
+    final_responses["Total_Score"] = total_score
+    
+    st.table(pd.DataFrame(summary_data))
+    st.metric("Total Skor Adaptive Thinking", f"{total_score} / 80")
+    
+    if st.button("🚀 Kirim Data Ke Peneliti"):
+        with st.spinner("Mengirim data..."):
+            success = save_to_gsheets(final_responses)
+            if success:
+                st.success("Data berhasil terkirim ke Google Sheets Peneliti!")
+                st.balloons()
+                st.session_state.page = "finish"
+                # st.rerun()
+            else:
+                st.error("Gagal mengirim ke Google Sheets secara otomatis.")
+                st.info("Silakan unduh CSV hasil di bawah dan kirimkan manual ke Dosen/Peneliti.")
+                csv = pd.DataFrame([final_responses]).to_csv(index=False).encode('utf-8')
+                st.download_button(
+                    label="Download Hasil (CSV)",
+                    data=csv,
+                    file_name=f"Hasil_SJT_{st.session_state.user_data['NIM']}.csv",
+                    mime='text/csv',
+                )
+
+# --- PAGE: FINISH ---
+elif st.session_state.page == "finish":
+    st.title("🏁 Selesai")
+    st.success("Terima kasih telah berpartisipasi dalam penelitian ini.")
+    st.write("Jawaban Anda telah tersimpan. Anda dapat menutup tab ini sekarang.")
+    if st.button("Mulai Baru (Reset)"):
+        st.session_state.clear()
+        st.rerun()
