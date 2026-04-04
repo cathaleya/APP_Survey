@@ -3,200 +3,200 @@
     "id": 1,
     "scenario": "Anda sedang mengajarkan menyapa dalam Bahasa Inggris mengunakan flipbook interaktif. Tiba-tiba audio 'Good Morning' tidak keluar suaranya karena kendala teknis laptop. Apa yang Anda lakukan?",
     "options": [
-      {"text": "Tetap antusias menyanyi sendiri dengan gerakan ekspresif dan mengajak siswa mengikuti.", "score": 4},
-      {"text": "Meminta siswa membaca teks di layar saja tanpa praktik suara.", "score": 3},
-      {"text": "Berhenti sejenak untuk memperbaiki laptop selama 10 menit sementara siswa menunggu.", "score": 2},
-      {"text": "Meminta maaf dan melewati materi menyapa tersebut.", "score": 1}
+      {"text": "Meminta siswa membaca teks lirik lagu di layar secara bersama-sama tanpa musik.", "score": 3},
+      {"text": "Tetap antusias menyanyi sendiri dengan gerakan ekspresif dan mengajak siswa mengikuti sebagai pengganti audio.", "score": 4},
+      {"text": "Memberikan tugas menulis lirik lagu tersebut di buku tulis sambil Anda mencoba memperbaiki laptop.", "score": 2},
+      {"text": "Meminta maaf kepada siswa dan segera mengganti materi ke topik lain yang tidak membutuhkan audio.", "score": 1}
     ]
   },
   {
     "id": 2,
     "scenario": "Seorang siswa di kelas rendah tampak bingung saat Anda memberikan instruksi 'Open your book' meskipun Anda sudah mengatakannya berulang kali.",
     "options": [
-      {"text": "Mendekati siswa tersebut sambil memberikan gerakan tubuh membuka buku secara visual.", "score": 4},
-      {"text": "Mengulangi instruksi dengan suara yang lebih keras agar terdengar jelas.", "score": 2},
-      {"text": "Meminta teman sebangkunya untuk memerintahkan dalam bahasa Indonesia.", "score": 3},
-      {"text": "Membiarkan saja sampai siswa tersebut melihat tindakan teman lainnya.", "score": 1}
+      {"text": "Meminta teman sebangkunya untuk menerjemahkan instruksi tersebut ke dalam Bahasa Indonesia.", "score": 3},
+      {"text": "Mengulangi instruksi dengan suara yang lebih lambat dan jelas sambil menunjuk arah buku.", "score": 2},
+      {"text": "Menunggu beberapa saat sampai siswa tersebut menyadari tindakan teman-temannya yang lain.", "score": 1},
+      {"text": "Mendekati siswa tersebut sambil memberikan isyarat visual (mimik/gerakan) membuka buku di depan mejanya.", "score": 4}
     ]
   },
   {
     "id": 3,
-    "scenario": "Saat menggunakan flipbook, ada gambar hewan yang tidak muncul (blank). Siswa mulai berisik dan bertanya-tanya.",
+    "scenario": "Saat menggunakan flipbook, ada gambar hewan yang tidak muncul (blank) karena error sistem. Siswa mulai berisik dan bertanya-tanya.",
     "options": [
-      {"text": "Mengajak siswa 'menebak' hewan tersebut berdasarkan ciri-ciri yang Anda deskripsikan secara lisan.", "score": 4},
-      {"text": "Menutup flipbook dan segera mengganti pelajaran lain.", "score": 1},
-      {"text": "Meminta siswa bersabar sementara Anda mencoba me-refresh halaman flipbook.", "score": 3},
-      {"text": "Menyuruh siswa menggambar hewan tersebut di buku mereka masing-masing.", "score": 2}
+      {"text": "Menggambar sketsa manual hewan tersebut di papan tulis sebagai pengganti gambar di flipbook.", "score": 3},
+      {"text": "Membuat teka-teki lisan mengenai ciri-ciri hewan tersebut dalam Bahasa Inggris sederhana agar siswa menebaknya.", "score": 4},
+      {"text": "Meminta siswa untuk fokus pada teks deskripsi hewan tersebut tanpa mempedulikan gambarnya.", "score": 2},
+      {"text": "Menghentikan penggunaan flipbook dan menyuruh siswa membaca materi dari buku paket saja.", "score": 1}
     ]
   },
   {
     "id": 4,
-    "scenario": "Siswa kelas 4 tampak sangat bosan dengan aktivitas membaca teks percakapan di flipbook yang terlalu panjang.",
+    "scenario": "Siswa kelas 4 tampak bosan dan kehilangan konsentrasi saat aktivitas membaca teks percakapan di flipbook yang dirasa terlalu panjang.",
     "options": [
-      {"text": "Mengubah teks tersebut menjadi permainan peran (Roleplay) sederhana di depan kelas.", "score": 4},
-      {"text": "Memberikan tugas menulis ulang teks tersebut di buku tulis agar mereka sibuk.", "score": 2},
-      {"text": "Meminta siswa untuk terus membaca sampai selesai agar disiplin.", "score": 1},
-      {"text": "Memotong durasi membaca dan memberikan kuis singkat berhadiah.", "score": 3}
+      {"text": "Menghentikan bacaan dan mengubah sisa teks menjadi aktivitas bermain peran (role-play) singkat secara berpasangan.", "score": 4},
+      {"text": "Mengadakan kuis cepat berhadiah bagi siswa yang bisa menjawab pertanyaan berdasarkan teks yang sudah dibaca.", "score": 3},
+      {"text": "Meminta siswa membaca bergantian antar baris kursi agar suasana lebih dinamis.", "score": 2},
+      {"text": "Menargetkan penyelesaian bacaan secepat mungkin agar bisa segera lanjut ke latihan soal.", "score": 1}
     ]
   },
   {
     "id": 5,
-    "scenario": "Dalam diskusi, seorang siswa bertanya 'Apa bahasa Inggrisnya 'ngantuk'?', namun Anda lupa kosakata tersebut saat itu.",
+    "scenario": "Siswa bertanya 'Apa bahasa Inggrisnya 'ngantuk'?', namun Anda lupa kosakata tersebut saat itu di depan kelas.",
     "options": [
-      {"text": "Mengatakan, 'Wah, pertanyaan bagus! Ayo kita cek bersama di kamus digital/Google di layar ini'.", "score": 4},
-      {"text": "Menjawab 'I don't know' dan melanjutkan pelajaran.", "score": 1},
-      {"text": "Mengalihkan pertanyaan dengan mengatakan itu materi minggu depan.", "score": 2},
-      {"text": "Meminta siswa lain menjawab agar Anda punya waktu berpikir.", "score": 3}
+      {"text": "Menanyakan kepada siswa lain apakah ada yang tahu, untuk memancing diskusi kelas.", "score": 3},
+      {"text": "Menjanjikan akan menjawab pertanyaan tersebut pada pertemuan berikutnya karena sekarang fokus ke materi utama.", "score": 2},
+      {"text": "Mengatakan, 'Wah, tantangan menarik! Ayo kita cari tahu bersama di kamus digital di layar ini'.", "score": 4},
+      {"text": "Menjawab bahwa kosakata tersebut belum dipelajari di tingkat kelas ini.", "score": 1}
     ]
   },
   {
     "id": 6,
-    "scenario": "Siswa kelas 1 sangat gaduh saat diajak bernyanyi lagu 'Head, Shoulders, Knees, and Toes' sehingga mengganggu kelas sebelah.",
+    "scenario": "Siswa kelas 1 sangat gaduh saat diajak bernyanyi lagu Bahasa Inggris sehingga suara mereka mengganggu kelas di sebelahnya.",
     "options": [
-      {"text": "Menurunkan volume suara secara bertahap dan mengajak siswa bernyanyi 'berbisik' (whisper mode).", "score": 4},
-      {"text": "Berteriak menyuruh mereka diam agar tidak dihukum kepala sekolah.", "score": 1},
-      {"text": "Menghentikan lagu dan menyuruh mereka duduk diam tanpa aktivitas.", "score": 2},
-      {"text": "Memberikan isyarat jari di bibir (ssshh) tanpa berhenti bernyanyi.", "score": 3}
+      {"text": "Memberikan instruksi 'Freeze' (diam sejenak) dan menurunkan volume suara Anda untuk menarik perhatian mereka.", "score": 3},
+      {"text": "Segera menghentikan nyanyian dan menyuruh mereka duduk tenang tanpa suara.", "score": 1},
+      {"text": "Mengajak siswa bernyanyi dalam volume 'berbisik' (whisper challenge) dengan gerakan yang tetap energik.", "score": 4},
+      {"text": "Mengingatkan siswa tentang aturan ketenangan kelas (class rules) sebelum melanjutkan nyanyian.", "score": 2}
     ]
   },
   {
     "id": 7,
-    "scenario": "Flipbook yang Anda gunakan memiliki fitur interaktif yang sulit diklik oleh jari siswa kelas rendah yang kecil.",
+    "scenario": "Fitur interaktif di flipbook sulit dijalankan menggunakan mouse oleh siswa kelas rendah, menyebabkan antrean panjang di depan kelas.",
     "options": [
-      {"text": "Membantu mengklikkan sambil menjelaskan instruksi fiturnya dengan bahasa yang mudah.", "score": 4},
-      {"text": "Menyuruh siswa menyerah saja dan hanya menonton Anda mengklik.", "score": 2},
-      {"text": "Mengganti aktivitas digital menjadi aktivitas fisik yang serupa di kelas.", "score": 3},
-      {"text": "Memarahi siswa karena tidak hati-hati dalam menggunakan perangkat.", "score": 1}
+      {"text": "Mendemonstrasikan cara pakainya di layar dan mengubahnya menjadi aktivitas klasikal (menebak bersama).", "score": 4},
+      {"text": "Hanya menunjuk 2 perwakilan siswa yang paling mahir teknologi untuk membantu teman lainnya.", "score": 2},
+      {"text": "Mendampingi setiap siswa satu per satu saat mereka mencoba menggunakannya secara bergantian.", "score": 3},
+      {"text": "Meminta semua siswa kembali ke tempat duduk dan hanya menonton Anda yang mengoperasikan fitur tersebut.", "score": 1}
     ]
   },
   {
     "id": 8,
-    "scenario": "Hanya 2 siswa yang selalu aktif menjawab dalam Bahasa Inggris, sementara yang lain hanya diam dan takut salah.",
+    "scenario": "Hanya segelintir siswa yang selalu aktif menjawab dalam Bahasa Inggris, sementara mayoritas siswa lainnya terlihat takut salah.",
     "options": [
-      {"text": "Memberikan apresiasi pada semua usaha bicara, sekecil apapun, tanpa terlalu sering mengoreksi tata bahasa.", "score": 4},
-      {"text": "Memaksa siswa yang diam untuk bicara satu per satu di depan kelas.", "score": 2},
-      {"text": "Terus bertanya hanya kepada 2 siswa tersebut agar kelas berjalan lancar.", "score": 1},
-      {"text": "Memberikan poin tambahan khusus bagi siapa saja yang berani bersuara.", "score": 3}
+      {"text": "Memberikan apresiasi berupa poin atau stiker khusus bagi siswa yang jarang bersuara namun mau mencoba.", "score": 3},
+      {"text": "Menekankan bahwa kesalahan bicara adalah bagian dari belajar dan memberikan pujian pada setiap usaha bersuara.", "score": 4},
+      {"text": "Memberikan pertanyaan yang lebih mudah khusus untuk siswa yang terlihat kurang percaya diri.", "score": 2},
+      {"text": "Tetap melanjutkan pelajaran dengan siswa yang aktif agar target materi tercapai tepat waktu.", "score": 1}
     ]
   },
   {
     "id": 9,
-    "scenario": "Orang tua siswa bertanya mengapa anaknya diajarkan Bahasa Inggris sejak kelas 1, padahal mereka merasa itu terlalu sulit.",
+    "scenario": "Seorang orang tua siswa merasa ragu dan bertanya mengapa anaknya perlu belajar Bahasa Inggris sejak kelas 1 SD.",
     "options": [
-      {"text": "Menjelaskan bahwa pengenalan dini melalui media interaktif (Spt Flipbook) melatih kepekaan pendengaran siswa.", "score": 4},
-      {"text": "Menyetujui bahwa itu memang sulit dan Anda juga terpaksa mengajar.", "score": 1},
-      {"text": "Mengabaikan pertanyaan orang tua dan tetap mengajar seperti biasa.", "score": 2},
-      {"text": "Menunjukkan hasil karya/nyanyian anak yang menyenangkan kepada orang tua.", "score": 3}
+      {"text": "Menunjukkan portofolio atau video aktivitas belajar anak di kelas yang terlihat ceria dan antusias.", "score": 3},
+      {"text": "Menjelaskan bahwa hal ini sudah sesuai dengan kurikulum dan program sekolah yang berlaku.", "score": 2},
+      {"text": "Memberikan edukasi mengenai sensitivitas pendengaran anak (golden age) terhadap bunyi bahasa asing melalui media menyenangkan.", "score": 4},
+      {"text": "Menyarankan orang tua untuk membicarakan kekhawatiran tersebut langsung kepada kepala sekolah.", "score": 1}
     ]
   },
   {
     "id": 10,
-    "scenario": "Anda menemukan kesalahan penulisan (typo) pada kosakata penting di dalam flipbook yang sedang ditampilkan di depan kelas.",
+    "scenario": "Anda menemukan kesalahan pengetikan (typo) pada kosakata kunci dalam flipbook saat sedang presentasi di depan kelas.",
     "options": [
-      {"text": "Menjadikan itu kuis: 'Siapa yang bisa menemukan huruf yang salah di kata ini?' lalu membenarkannya.", "score": 4},
-      {"text": "Berpura-pura tidak melihat kesalahan tersebut agar tidak malu di depan siswa.", "score": 1},
-      {"text": "Menyalahkan pembuat flipbook di depan siswa.", "score": 2},
-      {"text": "Langsung mengoreksi secara lisan dan menjelaskan penulisan yang benar.", "score": 3}
+      {"text": "Langsung mengoreksi tulisan tersebut secara lisan dan menjelaskan penulisan yang benar pada papan tulis.", "score": 3},
+      {"text": "Mengubahnya menjadi permainan 'Temukan Kesalahan' untuk menguji ketelitian siswa terhadap kata tersebut.", "score": 4},
+      {"text": "Menjelaskan bahwa media tersebut sedang dalam tahap revisi sambil tetap melanjutkan penjelasan.", "score": 2},
+      {"text": "Mengabaikan kesalahan tersebut karena takut dianggap tidak kompeten oleh siswa.", "score": 1}
     ]
   },
   {
     "id": 11,
-    "scenario": "Siswa bertanya tentang arti sebuah kata yang tidak ada hubungannya dengan materi hari ini di tengah penjelasan Anda.",
+    "scenario": "Seorang siswa menanyakan arti kata yang sangat teknis/sulit yang tidak sengaja terbaca di flipbook, namun materi tersebut belum saatnya diajarkan.",
     "options": [
-      {"text": "Menulisnya di 'Wonder Wall' (pojok tanya) untuk dibahas di akhir pelajaran.", "score": 4},
-      {"text": "Langsung menjawabnya panjang lebar sampai lupa materi utama.", "score": 2},
-      {"text": "Mengatakan bahwa pertanyaan tersebut tidak penting dan dilarang bertanya di luar materi.", "score": 1},
-      {"text": "Memberi jawaban singkat lalu segera kembali ke materi utama.", "score": 3}
+      {"text": "Memberikan apresiasi atas rasa haus tahu siswa namun meminta izin untuk melanjutkan materi utama terlebih dahulu.", "score": 3},
+      {"text": "Menjelaskan definisinya sesingkat mungkin dalam bahasa sederhana lalu menyimpannya untuk dibahas nanti di akhir kelas.", "score": 4},
+      {"text": "Menjawab pertanyaan tersebut secara detil demi memuaskan rasa ingin tahu siswa meski memakan waktu lama.", "score": 2},
+      {"text": "Mengisyaratkan bahwa pertanyaan tersebut di luar topik dan siswa harus fokus pada materi hari ini.", "score": 1}
     ]
   },
   {
     "id": 12,
-    "scenario": "Saat praktek bicara, seorang siswa diejek temannya karena logat daerahnya yang kental saat mengucapkan kata Bahasa Inggris.",
+    "scenario": "Siswa menertawakan logat atau kesalahan pengucapan temannya saat sedang membacakan dialog di depan kelas.",
     "options": [
+      {"text": "Menegur keras siswa yang menertawakan dan mengingatkan pentingnya saling menghargai.", "score": 3},
+      {"text": "Meminta satu kelas untuk memberikan tepuk tangan sebagai dukungan kepada siswa yang berani maju tersebut.", "score": 2},
       {"text": "Menegaskan bahwa keberanian bicara lebih penting dan mengajak satu kelas memberikan dukungan.", "score": 4},
-      {"text": "Ikut tertawa sebentar lalu menyuruh semuanya diam.", "score": 1},
-      {"text": "Menyuruh siswa tersebut berhenti bicara agar tidak diejek lagi.", "score": 2},
-      {"text": "Mengoreksi pengucapannya secara privat tanpa mempermalukannya di depan kelas.", "score": 3}
+      {"text": "Mengulangi pengucapan tersebut bersama-sama satu kelas agar siswa yang salah tidak merasa sendiri.", "score": 3}
     ]
   },
   {
     "id": 13,
-    "scenario": "Anda merencanakan aktivitas luar kelas, namun tiba-tiba hujan deras. Padahal materi flipbook mengharuskan siswa mencari benda di luar.",
+    "scenario": "Rencana pembelajaran Anda mengharuskan pengamatan benda nyata di luar kelas, namun cuaca hujan lebat membuat rencana tersebut mustahil dilakukan.",
     "options": [
-      {"text": "Mengubah aktivitas mencari benda nyata menjadi 'mencari benda di dalam ilustrasi flipbook/gambar'.", "score": 4},
-      {"text": "Membatalkan pelajaran dan memberikan waktu bebas kepada siswa.", "score": 1},
-      {"text": "Tetap menyuruh siswa keluar menggunakan payung agar rencana tidak gagal.", "score": 2},
-      {"text": "Meminta siswa menggambar benda-benda luar ruangan yang mereka ingat dari dalam kelas.", "score": 3}
+      {"text": "Meminta siswa membayangkan benda-benda tersebut dan mendeskripsikannya dalam kelompok di dalam kelas.", "score": 3},
+      {"text": "Menunda aktivitas pengamatan dan menggantinya dengan latihan soal tulis di buku masing-masing.", "score": 2},
+      {"text": "Menggunakan ilustrasi gambar/video di flipbook sebagai simulasi pengamatan benda-benda luar ruangan.", "score": 4},
+      {"text": "Membiarkan siswa belajar mandiri atau bebas hingga hujan reda agar rencana awal tetap bisa terlaksana.", "score": 1}
     ]
   },
   {
     "id": 14,
-    "scenario": "Waktu pelajaran Bahasa Inggris tersisa 5 menit lagi, namun masih ada satu halaman aktivitas interaktif di flipbook yang belum dibahas.",
+    "scenario": "Tinggal 5 menit sebelum bel pulang, namun Anda baru saja sampai pada halaman tantangan terakhir di flipbook.",
     "options": [
-      {"text": "Melakukan 'Quick Review' ringkas bersama-sama tentang poin utama halaman tersebut.", "score": 4},
-      {"text": "Memaksa menyelesaikan seluruh halaman dengan cepat meski siswa tidak paham.", "score": 2},
-      {"text": "Menutup pelajaran begitu saja karena sudah hampir bel.", "score": 1},
-      {"text": "Menjadikan halaman tersebut sebagai tantangan opsional untuk dipelajari di rumah.", "score": 3}
+      {"text": "Menjadikan halaman tersebut sebagai tantangan opsional untuk dieksplorasi siswa secara mandiri di rumah.", "score": 3},
+      {"text": "Memberikan kesimpulan kilas balik (review) bersama siswa tentang poin paling penting dari halaman tersebut.", "score": 4},
+      {"text": "Mempercepat penjelasan halaman tersebut meski berisiko siswa tidak menangkap maksudnya.", "score": 2},
+      {"text": "Menutup pelajaran sesuai jadwal dan berjanji akan membahas halaman tersebut di pertemuan berikutnya.", "score": 1}
     ]
   },
   {
     "id": 15,
-    "scenario": "Siswa kelas 6 bertanya mengapa tata bahasa di lagu Bahasa Inggris berbeda dengan tata bahasa yang mereka pelajari di buku.",
+    "scenario": "Siswa mengeluhkan bahasa yang digunakan di audio lagu flipbook berbeda dengan struktur kalimat (grammar) yang ada di buku latihan.",
     "options": [
-      {"text": "Menjelaskan secara sederhana tentang perbedaan gaya bahasa percakapan/seni dengan bahasa formal.", "score": 4},
-      {"text": "Mengatakan bahwa lagu itu salah dan jangan didengarkan.", "score": 1},
-      {"text": "Menghindari pembahasan karena takut membingungkan siswa lebih lanjut.", "score": 2},
-      {"text": "Meminta siswa mengikuti buku saja dan mengabaikan lirik lagu tersebut.", "score": 3}
+      {"text": "Meminta siswa mengikuti contoh di buku latihan saja agar tidak bingung saat ujian nanti.", "score": 3},
+      {"text": "Menjelaskan secara asyik bahwa dalam bahasa ada gaya 'formal' dan gaya 'seni/percakapan' yang keduanya benar secara konteks.", "score": 4},
+      {"text": "Menganalisis perbedaan kecil tersebut bersama siswa untuk menambah wawasan kebahasaan mereka.", "score": 2},
+      {"text": "Menjelaskan bahwa lirik lagu memang sering salah dan sebaiknya tidak dijadikan patokan utama.", "score": 1}
     ]
   },
   {
     "id": 16,
-    "scenario": "Anda merasa sangat gugup hari ini karena akan diobservasi oleh rekan sejawat/dosen saat mengajar menggunakan flipbook.",
+    "scenario": "Anda merasa performa mengajar Anda hari ini menurun karena kelelahan, sementara siswa tampak sangat antusias dengan flipbook baru.",
     "options": [
-      {"text": "Fokus pada interaksi dengan siswa dan manfaat media, bukan pada observer.", "score": 4},
-      {"text": "Menyiapkan skenario kaku dan melarang siswa bertanya agar tidak ada kesalahan.", "score": 1},
-      {"text": "Berpura-pura sakit agar jadwal obervasi ditunda.", "score": 2},
-      {"text": "Menceritakan kegugupan Anda pada siswa agar mereka membantu mendukung kelancaran kelas.", "score": 3}
+      {"text": "Tetap berusaha mengajar dengan semangat meski terasa berat demi menjaga antusiasme siswa.", "score": 3},
+      {"text": "Memberikan peran lebih kepada siswa untuk memimpin diskusi berdasarkan fitur flipbook agar Anda bisa lebih banyak memantau.", "score": 4},
+      {"text": "Memberikan waktu eksplorasi mandiri lebih lama bagi siswa sementara Anda beristirahat sejenak.", "score": 2},
+      {"text": "Menutup pelajaran lebih awal dan meminta siswa mengerjakan latihan di buku sebagai gantinya.", "score": 1}
     ]
   },
   {
     "id": 17,
-    "scenario": "Anda ingin mengintegrasikan tarian daerah lokal ke dalam materi 'Animals' di Bahasa Inggris, tapi ragu apakah dibolehkan.",
+    "scenario": "Anda ingin memasukkan unsur budaya lokal (misal: pakaian adat) ke dalam materi Bahasa Inggris, namun khawatir hal itu tidak relevan dengan materi luar negeri.",
     "options": [
-      {"text": "Menggunakannya sebagai jembatan konteks (Misal: tari merak untuk vocabulary peacock).", "score": 4},
-      {"text": "Hanya menggunakan materi murni dari buku bahasa Inggris luar negeri saja.", "score": 1},
-      {"text": "Menanyakan pada rekan sejawat dan jika ragu pilih tidak menggunakan.", "score": 2},
-      {"text": "Hanya menampilkannya sebagai video tambahan tanpa kaitan materi.", "score": 3}
+      {"text": "Mencari padanan budaya internasional yang serupa untuk dibandingkan dengan budaya lokal tersebut.", "score": 3},
+      {"text": "Menggunakan budaya lokal sebagai konteks pengenalan kosakata (Misal: 'Batik is an Indonesian cloth').", "score": 4},
+      {"text": "Menyisipkan gambar budaya lokal tersebut di sela-sela flipbook tanpa menghubungkannya dalam kalimat lisan.", "score": 2},
+      {"text": " Memilih untuk tetap menggunakan contoh materi standar (Western culture) agar aman dan sesuai textbook.", "score": 1}
     ]
   },
   {
     "id": 18,
-    "scenario": "Listrik di sekolah tiba-tiba mati saat Anda baru saja memulai pelajaran berbasis flipbook interaktif di layar proyektor.",
+    "scenario": "Layar proyektor tiba-tiba mati saat Anda sedang menjelaskan materi interaktif yang hanya ada di dalam flipbook tersebut.",
     "options": [
-      {"text": "Memindahkan aktivitas ke bentuk kartu manual/flashcards atau gambar di papan tulis secara kreatif.", "score": 4},
-      {"text": "Menunggu listrik menyala kembali tanpa melakukan aktivitas apapun.", "score": 1},
-      {"text": "Meminta siswa belajar mandiri dengan membaca buku masing-masing.", "score": 2},
-      {"text": "Mengajak siswa diskusi/tanya jawab lisan tentang topik kemarin tanpa media.", "score": 3}
+      {"text": "Meminta siswa membuka laptop/gadget pribadi (jika ada) untuk mengakses flipbook tersebut secara individu.", "score": 3},
+      {"text": "Segera beralih ke papan tulis dan menggunakan teknik 'Total Physical Response' (gerakan tubuh) untuk melanjutkan materi.", "score": 4},
+      {"text": "Melanjutkan penjelasan secara lisan berdasarkan daya ingat Anda tanpa media bantu visual.", "score": 2},
+      {"text": "Memberhentikan pelajaran sejenak untuk memanggil teknisi meski memakan waktu cukup lama.", "score": 1}
     ]
   },
   {
     "id": 19,
-    "scenario": "Setelah pelajaran selesai, Anda menyadari bahwa aktivitas flipbook yang Anda lakukan ternyata terlalu sulit bagi siswa.",
+    "scenario": "Setelah kelas berakhir, Anda menyadari bahwa cara Anda merespon pertanyaan siswa tadi kurang tepat dan mungkin membuatnya bingung.",
     "options": [
-      {"text": "Mencatat kekurangan tersebut sebagai bahan refleksi untuk memodifikasi penyampaian di pertemuan berikutnya.", "score": 4},
-      {"text": "Menyalahkan siswa karena kurang belajar di rumah.", "score": 1},
-      {"text": "Merasa gagal dan memutuskan tidak akan menggunakan media itu lagi.", "score": 2},
-      {"text": "Bertanya pada siswa bagian mana yang paling sulit bagi mereka untuk bahan perbaikan.", "score": 3}
+      {"text": "Menyiapkan catatan revisi cara mengajar Anda untuk situasi serupa di masa mendatang.", "score": 3},
+      {"text": "Berharap siswa tersebut tidak menyadarinya dan tetap melanjutkan rencana pelajaran berikutnya.", "score": 1},
+      {"text": "Memulai pertemuan berikutnya dengan klarifikasi yang lebih baik dan mengapresiasi pertanyaan siswa tersebut lagi.", "score": 4},
+      {"text": "Meminta tanggapan rekan sejawat tentang cara terbaik menjawab pertanyaan tersebut.", "score": 3}
     ]
   },
   {
     "id": 20,
-    "scenario": "Seorang rekan kerja mengkritik bahwa penggunaan flipbook membuang waktu dan lebih baik siswa menghafal daftar kata saja.",
+    "scenario": "Rekan sejawat menyebut bahwa cara Anda mengajar dengan media interaktif terlalu menyita waktu persiapan.",
     "options": [
-      {"text": "Mendengarkan masukan tersebut sambil tetap konsisten mencoba inovasi yang lebih menarik minat siswa.", "score": 4},
-      {"text": "Berdebat sengit dan menyalahkan metode lama rekan kerja tersebut.", "score": 1},
-      {"text": "Langsung menyerah dan kembali ke metode menghafal saja agar tidak dikritik.", "score": 2},
-      {"text": "Menunjukkan antusiasme siswa saat menggunakan flipbook sebagai bukti efektivitasnya.", "score": 3}
+      {"text": "Menjelaskan bahwa persiapan ini adalah bagian dari tanggung jawab profesional Anda sebagai guru modern.", "score": 3},
+      {"text": "Menerima masukan tersebut namun mengajak beliau melihat antusiasme dan hasil belajar siswa yang meningkat sebagai bukti manfaatnya.", "score": 4},
+      {"text": "Mengabaikan kritikan tersebut dan tetap mengajar dengan cara Anda sendiri.", "score": 2},
+      {"text": "Menyetujui kritikan tersebut dan berniat untuk kembali ke metode ceramah yang lebih praktis.", "score": 1}
     ]
   }
 ]
