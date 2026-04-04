@@ -7,8 +7,18 @@ from datetime import datetime
 # Set Page Config
 st.set_page_config(page_title="SJT Adaptive Thinking English - PGSD", layout="centered")
 
+import os
+
+# Get absolute path of the current directory
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+QUESTIONS_PATH = os.path.join(CURRENT_DIR, "questions.json")
+
 # Load Questions
-with open("questions.json", "r", encoding="utf-8") as f:
+if not os.path.exists(QUESTIONS_PATH):
+    st.error(f"File '{QUESTIONS_PATH}' tidak ditemukan. Pastikan file pertanyaan sudah diunggah.")
+    st.stop()
+
+with open(QUESTIONS_PATH, "r", encoding="utf-8") as f:
     questions = json.load(f)
 
 # Initialize Session State
